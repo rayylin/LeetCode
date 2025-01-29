@@ -16,6 +16,24 @@ def twoSum2(lst:[int], tar:int):
             return True
     return False
 
+def GeneratePa(x:int):
+    res = []
+    def BT(l,r,s):
+        if l == x and r == x:
+            res.append(s)
+        if l < x:
+            BT(l+1, r, s + "(")
+        if r < l:
+            BT(l, r+1, s + ")")
+    
+    BT(0,0,"")
+    return res
+
+
+
+
+
+
 
 if __name__ == "__main__":
     
@@ -25,3 +43,4 @@ if __name__ == "__main__":
     print(twoSum1(l, target))
     print(twoSum2(l, target))
 
+    print(GeneratePa(3))
