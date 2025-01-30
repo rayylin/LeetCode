@@ -30,6 +30,25 @@ def GeneratePa(x:int):
     return res
 
 
+def permute(nums: [int]) -> [[int]]:
+    res = []
+    
+    def BT(s):
+        if len(s) == len(nums):
+            res.append(s[:])  
+            return
+        
+        for i in range(len(nums)):
+            if nums[i] in s:
+                continue  
+            s.append(nums[i])
+            BT(s)
+            s.pop()  
+            
+    BT([])
+    return res
+    
+
 
 
 
@@ -44,3 +63,5 @@ if __name__ == "__main__":
     print(twoSum2(l, target))
 
     print(GeneratePa(3))
+
+    print(permute([1,2,3]))
