@@ -47,6 +47,27 @@ def permute(nums: [int]) -> [[int]]:
             
     BT([])
     return res
+
+
+def cumsum(cans:[int], target:int):
+    res = []
+    def dfs(i:int, cur:[int], total:int):
+        if total == target:
+            res.append(cur.copy())
+            return 
+        if i >= len(cans) or total >= target:
+            return
+        cur.append(cans[i])
+        # print(cur)
+        dfs(i, cur, total + cans[i])
+        cur.pop()
+        dfs(i+1, cur, total)
+
+        
+    
+    dfs(0,[],0)
+    return res
+
     
 
 
@@ -65,3 +86,5 @@ if __name__ == "__main__":
     print(GeneratePa(3))
 
     print(permute([1,2,3]))
+
+    print(cumsum([2,3,6,7], 7))
