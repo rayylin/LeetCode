@@ -30,6 +30,7 @@ def GeneratePa(x:int):
     return res
 
 
+
 def permute(nums: [int]) -> [[int]]:
     res = []
     
@@ -47,6 +48,24 @@ def permute(nums: [int]) -> [[int]]:
             
     BT([])
     return res
+
+def permute1(nums:[int]) -> [[int]]:
+    res = []
+    c = len(nums)
+
+    def BackTrack(start):
+        if (start == c):
+            res.append(nums.copy())
+            return
+
+        for i in range(start, c):
+            nums[i], nums[start] = nums[start], nums[i]
+            BackTrack(start+1)
+            nums[i], nums[start] = nums[start], nums[i]
+
+    BackTrack(0)
+    return res
+
 
 
 def cumsum(cans:[int], target:int):
@@ -86,5 +105,6 @@ if __name__ == "__main__":
     print(GeneratePa(3))
 
     print(permute([1,2,3]))
+    print(permute1([1,2,3]))
 
     print(cumsum([2,3,6,7], 7))
