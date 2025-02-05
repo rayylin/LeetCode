@@ -88,7 +88,20 @@ def cumsum(cans:[int], target:int):
     return res
 
     
-
+def cb(n:int, t:int):
+    res = []
+    
+    def BT(start, comb):
+        if (len(comb) == t):
+            res.append(comb.copy())
+            return
+        
+        for i in range(start, n+1):
+            comb.append(i)
+            BT(i+1, comb)
+            comb.pop()
+    BT(1,[])
+    return res
 
 
 
@@ -108,3 +121,4 @@ if __name__ == "__main__":
     print(permute1([1,2,3]))
 
     print(cumsum([2,3,6,7], 7))
+    print(cb(4,2))
