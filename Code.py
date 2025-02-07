@@ -103,6 +103,24 @@ def cb(n:int, t:int):
     BT(1,[])
     return res
 
+def subset(nums:[int])->[int]:
+    res = []
+    sub = []
+
+    def BackTrack(i:int):
+        if i >= len(nums):
+            res.append(sub.copy())
+            return
+
+        
+        sub.append(nums[i])
+        BackTrack(i+1)
+        sub.pop()
+        BackTrack(i+1)
+    
+    BackTrack(0)
+    return res
+
 
 
 
@@ -122,3 +140,5 @@ if __name__ == "__main__":
 
     print(cumsum([2,3,6,7], 7))
     print(cb(4,2))
+
+    print(subset([1,2,3]))
