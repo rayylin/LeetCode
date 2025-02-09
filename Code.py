@@ -121,6 +121,18 @@ def subset(nums:[int])->[int]:
     BackTrack(0)
     return res
 
+def summaryRange(nums:[int]):
+    range = []
+
+    for i in nums:
+        if range and range[-1][1] == i-1:
+            range[-1][1] = i
+        else:
+            range.append([i,i])
+    
+    return [i[0] if i[0] == i[1] else [i[0],i[1]] for i in range] 
+
+
 
 
 
@@ -142,3 +154,7 @@ if __name__ == "__main__":
     print(cb(4,2))
 
     print(subset([1,2,3]))
+
+    print(summaryRange([1,2,3,4,5,6,8,10]))
+
+          
