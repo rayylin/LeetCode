@@ -133,6 +133,20 @@ def summaryRange(nums:[int]):
     return [i[0] if i[0] == i[1] else [i[0],i[1]] for i in range] 
 
 
+def cw(nums:[int]):
+    mx = 0
+    l, r = 0, len(nums)-1
+
+    while (l<r):
+        area = (r-l) * min(nums[l], nums[r])
+        if area > mx:
+            mx = area
+
+        if nums[l] < nums[r]:
+            l += 1
+        else:
+            r -= 1 
+    return mx
 
 
 
@@ -156,5 +170,7 @@ if __name__ == "__main__":
     print(subset([1,2,3]))
 
     print(summaryRange([1,2,3,4,5,6,8,10]))
+
+    print(cw([1,8,6,2,5,4,8,3,7]))
 
           
