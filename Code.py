@@ -148,6 +148,16 @@ def cw(nums:[int]):
             r -= 1 
     return mx
 
+def jg2_55(nums:[int])-> bool:
+    mx = nums[0]
+
+    for i in range(len(nums)):
+        if i > mx: # max distance cannot reach a point in the list
+            return False 
+        elif i + nums[i] > mx:
+            mx = i + nums[i] # set new max distance if reaching a new point
+    return True if mx > len(nums) else False
+
 
 
 
@@ -172,5 +182,8 @@ if __name__ == "__main__":
     print(summaryRange([1,2,3,4,5,6,8,10]))
 
     print(cw([1,8,6,2,5,4,8,3,7]))
+
+    print(jg2_55([2,3,1,1,4]))
+    print(jg2_55([3,2,1,0,0]))
 
           
