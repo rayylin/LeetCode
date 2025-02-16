@@ -133,6 +133,7 @@ def summaryRange(nums:[int]):
     return [i[0] if i[0] == i[1] else [i[0],i[1]] for i in range] 
 
 
+# Two Pointer
 def cw(nums:[int]):
     mx = 0
     l, r = 0, len(nums)-1
