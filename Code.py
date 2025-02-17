@@ -134,7 +134,7 @@ def summaryRange(nums:[int]):
 
 
 # Two Pointer
-from TwoPointer import cw
+from TwoPointer import cw, twoSum2
 
 def jg2_55(nums:[int])-> bool:
     mx = nums[0]
@@ -173,5 +173,7 @@ if __name__ == "__main__":
 
     print(jg2_55([2,3,1,1,4]))
     print(jg2_55([3,2,1,0,0]))
+
+    print(twoSum2([1,2,3,5,6,7,9,14], 13))
 
           

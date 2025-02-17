@@ -14,3 +14,20 @@ def cw(nums:[int]):
         else:
             r -= 1 
     return mx
+
+
+# 167
+def twoSum2(nums:[int], tar:int)->[int]:
+    l, r = 0, len(nums)-1
+
+    while(l < r):
+        curSum = nums[l] + nums[r]
+        if (curSum > tar):
+            r -= 1
+        elif (curSum < tar):
+            l += 1
+        else:
+            return [l+1, r+1]
+    return []
+
+
