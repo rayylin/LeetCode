@@ -1,3 +1,26 @@
+# fab 1 1 2 3 5 8 13 21
+def fab1(tar:int): 
+    if (tar <= 1):
+        return 1
+    else:
+        return fab1(tar - 1) + fab1(tar - 2)
+    
+# 
+def fab2(tar:int): 
+    dic = {0:1, 1:1}
+
+    def rec(i):
+        if i in dic:
+            #print("used" + str(i))
+            return dic[i]
+
+        else:
+            summ = rec(i - 1) + rec(i - 2)
+            dic[i] = summ
+            return summ
+    return rec(tar)
+
+
 def targetSum494(nums:[int], tar:int):
     resDic = {}
 
@@ -14,3 +37,6 @@ def targetSum494(nums:[int], tar:int):
     return DP(0, 0)
 
 print(targetSum494([1,1,1,1,1], 3))
+
+print(fab1(10))
+print(fab2(10))
