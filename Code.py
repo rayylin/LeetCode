@@ -136,6 +136,11 @@ def summaryRange(nums:[int]):
 # Two Pointer
 from TwoPointer import cw, twoSum2
 
+
+# Dynamic Programming
+from DP import targetSum494
+
+
 def jg2_55(nums:[int])-> bool:
     mx = nums[0]
 
@@ -174,5 +179,7 @@ if __name__ == "__main__":
 
     print(cw([1,8,6,2,5,4,8,3,7]))
     print(twoSum2([1,2,3,5,6,7,9,14], 13))
+
+    print(targetSum494([1,1,1,1,1], 3))
 
           
