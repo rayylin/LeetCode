@@ -1,12 +1,13 @@
 # fab 1 1 2 3 5 8 13 21
 def fab1(tar:int): 
+    
     if (tar <= 1):
         return 1
     else:
         return fab1(tar - 1) + fab1(tar - 2)
     
 # 
-def fab2(tar:int): 
+def fab2(tar:int): # DP with caching
     dic = {0:1, 1:1}
 
     def rec(i):
