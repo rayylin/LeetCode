@@ -88,7 +88,7 @@ def cumsum(cans:[int], target:int):
     return res
 
     
-def cb(n:int, t:int):
+def combination(n:int, t:int):
     res = []
     
     def BT(start, comb):
@@ -168,7 +168,7 @@ if __name__ == "__main__":
     print(permute1([1,2,3]))
 
     print(cumsum([2,3,6,7], 7))
-    print(cb(4,2))
+    print(combination(4,2))
 
     print(subset([1,2,3]))
 
