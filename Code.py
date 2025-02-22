@@ -151,7 +151,7 @@ def jg2_55(nums:[int])-> bool:
             mx = i + nums[i] # set new max distance if reaching a new point
     return True if mx > len(nums) else False
 
-
+from SlidingWindow import lengthOfLongestSubstring
 
 
 if __name__ == "__main__":
@@ -181,5 +181,7 @@ if __name__ == "__main__":
     print(twoSum2([1,2,3,5,6,7,9,14], 13))
 
     print(targetSum494([1,1,1,1,1], 3))
+
+    print(lengthOfLongestSubstring("pwwkew"))
 
           
